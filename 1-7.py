@@ -227,6 +227,7 @@ print(r3.text)
 """
 
 # Example 16 Prepared Request 不用request方法，直接构造一个Prepared Request 对象
+"""
 from requests import Request, Session
 
 url = 'http://httpbin.org/post'
@@ -244,3 +245,62 @@ r = s.send(prepped)
 print(r.text)
 
 # 有了 Request 这个对象，就可以将请求当作独立的对象来看待，这样在一些场景中我们可以直接操作这个 Request 对象，更灵活地实现请求的调度和各种操作。
+"""
+#Example 17 自己设定，用Xpath来find all title of movies
+from lxml import etree
+
+url = "https://static1.scrape.cuiqingcai.com"
+
+r = requests.get(url)
+
+root = etree.HTML(r.text)
+name_node = root.xpath('//a[@class="name"]')
+title2 = []
+for node in name_node:
+    print(node.xpath('./h2/text()'))
+    title2.append(node.xpath('./h2/text()')[0])
+
+#title = root.xpath('//h2/text()')
+
+print(root)
+print(name_node)
+print(title2)
+
+
+# pattern = re.compile(r"<h2.*?>(.*?)</h2>",re.S)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
