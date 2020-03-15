@@ -9,7 +9,7 @@ import re
 
 
 #Q1: <PERSON OF INTEREST> API IS http://api.tvmaze.com/shows/2
-"""
+
 while True:
     try:
         url = 'http://api.tvmaze.com/shows/2'
@@ -39,7 +39,7 @@ while True:
     break
     #print(res, type(rep))
     # print("content type:", type(res.content))
-"""
+
 
 #02: http://api.tvmaze.com/shows?page=1
 
@@ -78,7 +78,7 @@ except Exception as e:
     print('Error:', e)
 
 
-#3 存下每张图片，每张图片命名为show的名字，位置在
+#03 存下每张图片，每张图片命名为show的名字，位置在
 
 
 def save_poster(url,name):
