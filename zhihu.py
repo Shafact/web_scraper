@@ -50,7 +50,7 @@ try:
         dict_writer.writeheader()
         dict_writer.writerows(articles)
 except:
-    print("No article type, all!")
+    print("No article type!")
 
 
 
